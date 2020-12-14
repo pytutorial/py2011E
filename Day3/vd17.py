@@ -11,9 +11,13 @@ so_nuoc = float(input('Số nước:'))
 i = 0  # chi so muc gia
 tong_tien = 0
 while so_nuoc > 0:
-    han_muc = min(10, so_nuoc)
+    if i < len(muc_gia)-1:
+        han_muc = min(10, so_nuoc)
+    else:
+        han_muc = so_nuoc
     tong_tien += muc_gia[i] * han_muc
+    print(f'{han_muc} số với giá {muc_gia[i]} : {han_muc * muc_gia[i]}')
     so_nuoc -= han_muc
-    i += 1
+    i += 1  
 
-print(tong_tien)
+print('Tổng tiền :' , tong_tien)
