@@ -12,7 +12,7 @@ def dec2bin(x):
     return st
 
 def dec2bin_recursive(x):
-    if x <= 1:
+    if x <= 1: # 1 digit
         return str(x)
     return dec2bin_recursive(x//2) + str(x%2)
 
