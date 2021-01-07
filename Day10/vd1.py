@@ -41,7 +41,7 @@ student = Student('Nguyễn Văn A', 2000, addr)
 #}
 import json
 #Encode
-student_json = json.dumps(student.toDict(), indent=2)
+student_json = json.dumps(student.toDict())#, indent=2)
 print(student_json)
 
 #Decode
