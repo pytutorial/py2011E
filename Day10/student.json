@@ -1,5 +1,8 @@
 {
-    "name": "Nguy\u1ec5n V\u0103n",
+    "name": "Nguy\u1ec5n V\u0103n A",
     "birthYear": 2000,
-    "address": "H\u00e0 N\u1ed9i"
-}
+    "address": {
+      "street": "123 Ho\u00e0n Ki\u1ebfm",
+      "city": "H\u00e0 N\u1ed9i"
+    }
+  }

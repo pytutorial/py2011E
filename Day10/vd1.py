@@ -1,18 +1,33 @@
 # Mã hóa / giải mã json object
 
+class Address:
+    def __init__(self, street, city):
+        self.street = street
+        self.city = city
+
+    def toDict(self):
+        return self.__dict__
+
 class Student:
     def __init__(self, name, birthYear, address):
         self.name = name
         self.birthYear = birthYear
         self.address = address
 
+    def toDict(self):
+        return {
+            'name': self.name,
+            'birthYear': self.birthYear,
+            'address': self.address.toDict()
+        }
+
     def fromDict(d):
         name = d['name']
         birthYear = d['birthYear']
         address = d['address']
         return Student(name, birthYear, address)
-
-student = Student('Nguyễn Văn A', 2000, 'Hà Nội')
+addr = Address('123 Hoàn Kiếm', 'Hà Nội')
+student = Student('Nguyễn Văn A', 2000, addr)
 #student = {
 #    'name': 'Nguyễn Văn',
 #    'birthYear': 2000,
@@ -20,7 +35,7 @@ student = Student('Nguyễn Văn A', 2000, 'Hà Nội')
 #}
 import json
 #Encode
-student_json = json.dumps(student.__dict__, indent=2)
+student_json = json.dumps(student.toDict(), indent=2)
 print(student_json)
 
 #Decode
