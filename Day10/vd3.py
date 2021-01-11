@@ -2,7 +2,7 @@
 from base64 import b64encode
 
 #print(b64encode(bytes([1, 2, 3])))
-f = open('download.png', 'rb')
+f = open('IPX.jpg', 'rb')
 data = f.read()  # bytes
 #print(data)
 f.close()
